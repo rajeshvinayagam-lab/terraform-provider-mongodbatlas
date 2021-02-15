@@ -67,6 +67,8 @@ func Provider() terraform.ResourceProvider {
 			"mongodbatlas_project_ip_access_list":                dataSourceMongoDBAtlasProjectIPAccessList(),
 			"mongodbatlas_cloud_provider_access":                 dataSourceMongoDBAtlasCloudProviderAccessList(),
 			"mongodbatlas_custom_dns_configuration_cluster_aws":  dataSourceMongoDBAtlasCustomDNSConfigurationAWS(),
+			"mongodbatlas_data_lake":                             dataSourceMongoDBAtlasDataLake(),
+			"mongodbatlas_data_lakes":                            dataSourceMongoDBAtlasDataLakes(),
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
@@ -97,6 +99,7 @@ func Provider() terraform.ResourceProvider {
 			"mongodbatlas_project_ip_access_list":                resourceMongoDBAtlasProjectIPAccessList(),
 			"mongodbatlas_cloud_provider_access":                 resourceMongoDBAtlasCloudProviderAccess(),
 			"mongodbatlas_custom_dns_configuration_cluster_aws":  resourceMongoDBAtlasCustomDNSConfiguration(),
+			"mongodbatlas_data_lake":                             resourceMongoDBAtlasDataLake(),
 		},
 
 		ConfigureFunc: providerConfigure,
